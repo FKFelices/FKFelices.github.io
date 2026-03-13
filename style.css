@@ -1,0 +1,65 @@
+/* General Page Styling */
+body {
+    background-color: #0f172a; /* Deep modern navy/black */
+    color: #e2e8f0; /* Soft white text for easy reading */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: 0 auto; /* Centers the whole website */
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+header {
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #38bdf8; /* Neon blue accent line */
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #38bdf8;
+    font-size: 3em;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.4); /* Slight neon glow */
+}
+
+h2 {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+/* Project Cards */
+ul {
+    list-style-type: none; /* Removes the boring bullet points */
+    padding: 0;
+}
+
+ul li {
+    background-color: #1e293b; /* Slightly lighter box for projects */
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    border-left: 4px solid #38bdf8;
+    transition: transform 0.2s ease-in-out; /* Prepares it for animation */
+}
+
+/* Interactivity: Hover Effects */
+ul li:hover {
+    transform: translateX(10px); /* Makes the project slide right when you hover over it! */
+    background-color: #2dd4bf; 
+    color: #0f172a;
+    cursor: pointer;
+}
+
+/* Links and Buttons */
+a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2dd4bf;
+}
