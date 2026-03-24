@@ -1,65 +1,123 @@
 /* General Page Styling */
 body {
-    background-color: #0f172a; /* Deep modern navy/black */
-    color: #e2e8f0; /* Soft white text for easy reading */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b1120; /* Deeper, more cinematic dark background */
+    color: #94a3b8; 
+    font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif; /* Clean body text */
     max-width: 800px;
-    margin: 0 auto; /* Centers the whole website */
+    margin: 0 auto; 
     padding: 40px 20px;
     line-height: 1.6;
 }
 
-/* Hero Section */
-header {
-    text-align: center;
-    padding-bottom: 30px;
-    border-bottom: 2px solid #38bdf8; /* Neon blue accent line */
-    margin-bottom: 40px;
+/* Container to act as our "Screen" */
+.ui-container {
+    background: radial-gradient(circle at center, #111827 0%, #0b1120 100%);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Typography & Headings */
+h1, h2, h3 {
+    font-family: 'Fira Code', monospace; /* Monospace for the tech/game vibe */
+    margin-bottom: 10px;
 }
 
 h1 {
-    color: #38bdf8;
-    font-size: 3em;
-    margin-bottom: 5px;
-    text-shadow: 0 0 10px rgba(56, 189, 248, 0.4); /* Slight neon glow */
+    color: #e0f2fe;
+    font-size: 2.2em;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
 }
 
 h2 {
-    color: #94a3b8;
+    color: #38bdf8;
+    font-size: 1.2em;
     font-weight: 400;
 }
 
-/* Project Cards */
-ul {
-    list-style-type: none; /* Removes the boring bullet points */
+h3 {
+    color: #38bdf8;
+    border-bottom: 1px solid #1e293b;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+/* Game-ish Accents */
+.prompt { color: #2dd4bf; }
+.bracket { color: #64748b; }
+
+/* Blinking Cursor Animation */
+.cursor {
+    animation: blink 1s step-end infinite;
+    color: #38bdf8;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Text Boxes */
+.text-box {
+    background-color: rgba(30, 41, 59, 0.4);
+    border-left: 2px solid #38bdf8;
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Interactive RPG Menu Lists */
+ul.interactive-menu {
+    list-style-type: none; 
     padding: 0;
 }
 
-ul li {
-    background-color: #1e293b; /* Slightly lighter box for projects */
+ul.interactive-menu li {
+    position: relative;
+    background-color: transparent;
+    border: 1px solid #1e293b;
     margin-bottom: 15px;
-    padding: 20px;
-    border-radius: 8px; /* Rounded corners */
-    border-left: 4px solid #38bdf8;
-    transition: transform 0.2s ease-in-out; /* Prepares it for animation */
+    padding: 20px 20px 20px 40px; /* Extra padding on left for the cursor */
+    border-radius: 6px; 
+    transition: all 0.2s ease-in-out; 
+}
+
+/* The hidden selection cursor (RPG style) */
+ul.interactive-menu li::before {
+    content: '▶';
+    position: absolute;
+    left: 15px;
+    color: #38bdf8;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
 }
 
 /* Interactivity: Hover Effects */
-ul li:hover {
-    transform: translateX(10px); /* Makes the project slide right when you hover over it! */
-    background-color: #2dd4bf; 
-    color: #0f172a;
+ul.interactive-menu li:hover {
+    transform: translateX(8px); 
+    background-color: rgba(56, 189, 248, 0.05); /* Slight blue tint */
+    border-color: #38bdf8;
+    color: #e2e8f0;
     cursor: pointer;
+    box-shadow: inset 0 0 15px rgba(56, 189, 248, 0.1);
 }
 
-/* Links and Buttons */
+ul.interactive-menu li:hover::before {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
+}
+
+/* Links */
 a {
-    color: #38bdf8;
+    color: #e2e8f0;
     text-decoration: none;
-    font-weight: bold;
+    display: block; /* Makes the whole area clickable */
 }
 
-a:hover {
-    text-decoration: underline;
-    color: #2dd4bf;
+ul.links li {
+    padding: 15px 20px 15px 40px;
+}
+
+ul.links li:hover a {
+    color: #38bdf8;
 }
